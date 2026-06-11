@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Подготовка к собеседованию QA</title>
+  <meta name="description" content="Страничка подготовки к собеседованию">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Навигация">
+      <a class="brand" href="#top" aria-label="Вверх">
+        <span class="brand-mark">QA</span>
+        <span>
+          <strong>Подготовка к собеседованию</strong>
+          <small>База знаний</small>
+        </span>
+      </a>
+
+      <nav class="side-nav" aria-label="Секции">
+        <p class="nav-label">Секции</p>
+        <a href="#questions" class="nav-section" data-filter-link="Junior"><span>Junior</span><strong>33</strong></a>
+<a href="#questions" class="nav-section" data-filter-link="Junior+/Middle"><span>Junior+/Middle</span><strong>26</strong></a>
+<a href="#questions" class="nav-section" data-filter-link="Middle+/Senior"><span>Middle+/Senior</span><strong>12</strong></a>
+<a href="#questions" class="nav-section" data-filter-link="AQA"><span>AQA</span><strong>42</strong></a>
+      </nav>
+
+      <div class="sidebar-card">
+        <p class="nav-label">Статистика</p>
+        <dl class="compact-stats">
+          <div><dt>Вопросы</dt><dd>113</dd></div>
+          <div><dt>Секции</dt><dd>4</dd></div>
+          <div><dt>Количество символов</dt><dd>13,533</dd></div>
+        </dl>
+      </div>
+    </aside>
+
+    <main class="content" id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">TG: @testerwritescode</p>
+          <h1>Страница для подготовки к собеседованию</h1>
+          <div class="intro-text"><p>Данный раздел существует исключительно для подготовки к собеседованию и устранению пробелов в знаниях.</p>
+<p>Раздел пополняется по мере прохождения мною собеседований. Все вопросы тут либо теоретические, либо ситуативные.</p>
+              <p>Практические задачи тут пока что отсутствуют, так как сайт в Beta версии</p>
+              <p>Некоторые ответы были написаны мною, некоторые в наглую скопированы из интернета :)</p>
+<p>Пользоваться разделом с целью полного прохождения собеседования ЗАПРЕЩЕНО! (но если очень хочется, то можно на свой страх и риск)</p>
+              <p>Обратная связь? Заполняй форму <a href="https://forms.gle/fpE6814tvvu6WenU8">Тык</a></p>
+
+</div>
+          <div class="hero-actions">
+            <a class="button primary" href="#questions">Посмотреть вопросы</a>
+            <button class="button ghost" type="button" id="expandAll">Развернуть все ответы</button>
+            <button class="button ghost" type="button" id="collapseAll">Свернуть все ответы</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-grid" aria-label="Overview by section">
+        
+        <section class="section-card" data-section="Junior">
+          <div class="section-topline">Секция</div>
+          <h3>Junior</h3>
+          <div class="section-description"><p>Базовые вопросы для начинающих QA-специалистов.</p></div>
+          <div class="section-count">33 вопроса</div>
+        </section>
+        <section class="section-card" data-section="Junior+/Middle">
+          <div class="section-topline">Секция</div>
+          <h3>Junior+/Middle</h3>
+          <div class="section-description"><p>Блок вопросов, которые задают Junior+/Middle специалистам</p>
+</div>
+          <div class="section-count">26 вопросов</div>
+        </section>
+        <section class="section-card" data-section="Middle+/Senior">
+          <div class="section-topline">Секция</div>
+          <h3>Middle+/Senior</h3>
+          <div class="section-description"><p>Блок вопросов, которые задают Middle+/Srnior специалистам</p>
+</div>
+          <div class="section-count">12 вопросов</div>
+        </section>
+        <section class="section-card" data-section="AQA">
+          <div class="section-topline">Секция</div>
+          <h3>AQA</h3>
+          <div class="section-description"><p>Автоматизация тестирования, JavaScript, Playwright, Selenium, XPath, CI/CD и смежные темы.</p></div>
+          <div class="section-count">42 вопроса</div>
+        </section>
+      </section>
+
+      <section class="controls" id="questions">
+        <div>
+          <p class="eyebrow">Банк вопросов</p>
+          <h2>Вопросы и ответы</h2>
+        </div>
+        <label class="search-box">
+          <span>Поиск</span>
+          <input id="searchInput" type="search" placeholder="Введите название вопроса, или ключевое слово" autocomplete="off">
+        </label>
+      </section>
+
+      <div class="filters" aria-label="Question filters">
+        <button class="filter-pill active" type="button" data-filter="All">All<span>113</span></button>
+<button class="filter-pill" type="button" data-filter="Junior">Junior<span>33</span></button>
+<button class="filter-pill" type="button" data-filter="Junior+/Middle">Junior+/Middle<span>26</span></button>
+<button class="filter-pill" type="button" data-filter="Middle+/Senior">Middle+/Senior<span>12</span></button>
+<button class="filter-pill" type="button" data-filter="AQA">AQA<span>42</span></button>
+      </div>
+
+      <p class="result-line" id="resultLine">Загрузка вопросов</p>
+
+      <section class="qa-list" id="qaList" aria-live="polite"></section>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <h3>Похоже, Ваш вопрос не найден</h3>
+        <p>Попробуйте другой поисковый запрос или сбросьте фильтр раздела.</p>
+      </div>
+    </main>
+  </div>
+  <script src="qa-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
